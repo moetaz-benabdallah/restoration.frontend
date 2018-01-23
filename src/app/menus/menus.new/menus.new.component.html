@@ -1,0 +1,27 @@
+<br>
+<h5>CADASTRO DE PRATO</h5>
+
+<form>
+
+  <div class="form-group">
+    <label>Restaurantes</label>
+    <select class="form-control col-lg-4" [(ngModel)]="Menu.restaurantId" [ngModelOptions]="{standalone:
+      true}" >
+        <option *ngFor="let r of Restaurants" [ngValue]="r.id"> {{r.name}} </option>
+      </select>
+  </div>
+
+  <div class="form-group">
+    <label>Prato</label>
+    <input type="text" [(ngModel)]="Menu.dish" [ngModelOptions]="{standalone:
+      true}" class="form-control col-lg-4" placeholder="Prato">
+  </div>
+
+  <div class="form-group">
+    <label>Preço</label>
+    <input type="text" [(ngModel)]="Menu.price" [ngModelOptions]="{standalone:
+      true}" class="form-control col-lg-4" placeholder="Preço">
+  </div>
+  <button (click)="Cancel()" class="btn btn-outline-danger btn-sm">Cancelar</button>
+  <button (click)="AddMenu()" class="btn btn-outline-secondary btn-sm">Adicionar</button>
+</form>

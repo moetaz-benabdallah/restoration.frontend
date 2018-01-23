@@ -1,0 +1,11 @@
+<br>
+<h5>EDIT RESTAURANTE</h5>
+
+<form>
+  <div class="form-group">
+    <label>Nome do Restaurante</label>
+    <input type="text" [(ngModel)]="Restaurant.name" [ngModelOptions]="{standalone:
+      true}" class="form-control col-lg-4" placeholder="Nome">
+  </div>
+  <button (click)="editRestaurant()" class="btn btn-outline-secondary btn-sm">Editar</button>
+</form>

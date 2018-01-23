@@ -1,0 +1,35 @@
+<br>
+<h3>Pratos</h3>
+
+<button class="btn btn-outline-secondary btn-sm" routerLink="new">Cadastrar novo prato</button>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Restaurants</th>
+        <th scope="col">Prato</th>
+        <th scope="col">Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menu of Menus">
+          <td>
+            <a (click)="deleteMenu(menu.id)"><i class="fa fa-remove"></i></a>
+          </td>
+          <td>
+            <a [routerLink]="['/menus/edit', menu.id]"><i class="fa fa-edit"></i></a>
+          </td>
+          <td>
+            {{ menu.restaurantName }}
+          </td>
+          <td>
+            {{ menu.dish }}
+          </td>
+          <td>
+            {{ menu.price }}
+          </td>
+        </tr>
+    </tbody>
+  </table>

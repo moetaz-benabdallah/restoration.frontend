@@ -1,0 +1,38 @@
+
+
+<br>
+
+<form>
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="Search" [ngModelOptions]="{standalone:
+        true}" class="form-control col-lg-3" placeholder="Pesquisar...">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-outline-secondary btn-sm" (click)="RestaurantSearch()">Pesquisar</button>
+        <button class="btn btn-outline-secondary btn-sm" routerLink="new">Cadastrar novo Restaurante</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Restaurants</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let resto of Restaurants">
+          <td>
+            <a (click)="DeleteRestaurant(resto.id)"><i class="fa fa-remove"></i></a>
+          </td>
+          <td>
+            <a [routerLink]="['/restaurants/edit', resto.id]"><i class="fa fa-edit"></i></a>
+          </td>
+          <td>
+            {{ resto.name }}
+          </td>
+        </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,12 @@
+<br>
+<h5>CADASTRO DE RESTAURANTE</h5>
+
+<form>
+  <div class="form-group">
+    <label>Nome do Restaurante</label>
+    <input type="text" [(ngModel)]="Restaurant.name" [ngModelOptions]="{standalone:
+      true}" class="form-control col-lg-4" placeholder="Nome">
+  </div>
+  <button (click)="Cancel()" class="btn btn-outline-danger btn-sm">Cancelar</button>
+  <button (click)="AddRestaurant()" class="btn btn-outline-secondary btn-sm">Adicionar</button>
+</form>
